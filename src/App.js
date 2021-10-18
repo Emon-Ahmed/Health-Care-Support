@@ -111,7 +111,7 @@ function App() {
   <div className="container">
     <h1 style={{ textAlign:"center", color: "#15BE63" }}>Account Details</h1>
     <div className="App">
-      {!user.email ? (
+      {!user.name ? (
         <div className="login-box">
           <div>
             <div>
@@ -140,10 +140,10 @@ function App() {
           </button>
         </div>
       )}
-      {user.email && (
+      {user.name && (
         <div>
           <h1>
-            Welcome To Our Website <span className="name">{user.name}</span>{" "}
+            Welcome To Our Website <span className="name">{user.name}</span>
           </h1>
           <p>Your Email {user.email} </p>
           <img src={user.photo} alt="" />
