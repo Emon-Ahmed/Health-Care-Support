@@ -1,38 +1,52 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.btn {
+  background-color: #15BE63;
+  border: 2px solid #15BE63;
   color: white;
+  padding: 12px 24px;
+  display: block;
+  margin-top: 7px;
+  transition: 1s;
+  font-weight: bold;
+  width: 240px;
 }
-
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background-color: white;
+  font-weight: bold;
+  border: 2px solid #15BE63;
+  color: #15BE63;
+  transition: 1s;
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.name {
+  color: #15BE63;
+  text-decoration: underline;
+}
+.input-box {
+  border: 2px solid #15BE63;
+  color: #15BE63;
+  padding: 7px 5px;
+  width: 227px;
+  transition: 1s;
+  margin-top: 7px;
+  font-weight: bold;
+}
+.input-box:first-child {
+  margin-top: 24px;
+}
+.input-box:focus {
+  outline: none;
+}
+.login-box{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  
+}
+.btn-out{
+  margin: 28px;
 }
