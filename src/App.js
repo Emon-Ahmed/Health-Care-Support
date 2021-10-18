@@ -1,7 +1,7 @@
 import "./App.css";
 import initAuth from "./firebase/firebase.init";
 import { useState } from "react";
-import {GoogleAuthProvider,signInWithPopup,getAuth,GithubAuthProvider,signOut,createUserWithEmailAndPassword} from "firebase/auth";
+import {GoogleAuthProvider,signInWithPopup,getAuth,GithubAuthProvider,signOut,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,updateProfile } from "firebase/auth";
 
 initAuth();
 const githubProvider = new GithubAuthProvider();
@@ -12,6 +12,8 @@ function App() {
   const [user, setUser] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [name, setName] = useState("");
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -19,9 +21,13 @@ function App() {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+  const handleName = (e) => {
+    setName(e.target.value);
+  }
 
   const signInGoogle = () => {
-    signInWithPopup(auth, googleProvider).then((result) => {
+    signInWithPopup(auth, googleProvider)
+    .then((result) => {
       const { displayName, photoURL, email } = result.user;
       const loggedInUser = {
         name: displayName,
@@ -33,7 +39,8 @@ function App() {
   };
 
   const signInGithub = () => {
-    signInWithPopup(auth, githubProvider).then((result) => {
+    signInWithPopup(auth, githubProvider)
+    .then((result) => {
       const { displayName, photoURL, email } = result.user;
       const loggedInUser = {
         name: displayName,
@@ -45,9 +52,52 @@ function App() {
   };
 
   const signUpWithEmail = () => {
-    createUserWithEmailAndPassword(auth, email, password).then((result) => {
+    if( password.length < 6  ){
+      setError( "Password Should Be 6 Char, OK" );
+      return;
+    }
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((result) => {
       const user = result.user;
+      setError('');
+      updateName();
       console.log(user);
+    })
+    .catch(error =>{
+      setError( error.message )
+    });
+  };
+
+  const signInwithEmail = () =>{
+    signInWithEmailAndPassword(auth, email, password)
+    .then( result=>{
+      const { displayName, photoURL, email } = result.user;
+      const loggedInUser = {
+        name: displayName,
+        email: email,
+        photo: photoURL,
+      };
+      setUser(loggedInUser);
+    })
+    .catch(error =>{
+      setError( error.message )
+    });
+  };
+  
+  function updateName() {
+    updateProfile(auth.currentUser, {
+      displayName: name
+    }).then(() => {
+      // Profile updated!
+    });
+  }
+  const resetPassword = () => {
+    sendPasswordResetEmail(auth, email)
+    .then(() => {
+      // Password reset email sent!
+    })
+    .catch((error) => {
+    setError(error.message);
     });
   };
 
@@ -58,18 +108,17 @@ function App() {
   };
 
   return (
-  <div>
-    <h1 style={{ textAlign:"center" }}>Account Details</h1>
+  <div className="container">
+    <h1 style={{ textAlign:"center", color: "#15BE63" }}>Account Details</h1>
     <div className="App">
-      {!user.name ? (
+      {!user.email ? (
         <div className="login-box">
           <div>
             <div>
-              <input onBlur={handleEmail} placeholder="Email" className="input-box" type="email"/>
-              <br />
-              <input  onBlur={handlePassword} placeholder="Password" className="input-box" type="password"/>
-              <br />
-              <input onClick={signUpWithEmail} className="btn" type="submit" value="Login"/>
+              <input onBlur={handleEmail} placeholder="Email" className="input-box" type="email"/><br />
+              <input onBlur={handlePassword} placeholder="Password" className="input-box" type="password"/><br />
+              <input onClick={signInwithEmail} className="btn" type="submit" value="Login"/>
+              <input onClick={resetPassword} className="btn" type="submit" value="Reset Password"/>
             </div>
             <hr />
             <button className="btn" onClick={signInGoogle}>Login With Google</button>
@@ -77,10 +126,11 @@ function App() {
           </div>
 
           <div>
-            <input placeholder="Name" className="input-box" type="text"/> <br />
-            <input placeholder="Email" className="input-box" type="email"/><br />
-            <input placeholder="Password" className="input-box" type="password" />
-            <button className="btn">Register With Email</button>
+            <input onBlur={handleName} placeholder="Name" className="input-box" type="text"/> <br />
+            <input onBlur={handleEmail} placeholder="Email" className="input-box" type="email" /><br />
+            <input onBlur={handlePassword} placeholder="Password" className="input-box" type="password" id="password"/>
+            <button onClick={signUpWithEmail} className="btn">Register With Email</button>
+            <small style={{color:"red"}}>{error}</small>
           </div>
         </div>
       ) : (
@@ -90,7 +140,7 @@ function App() {
           </button>
         </div>
       )}
-      {user.name && (
+      {user.email && (
         <div>
           <h1>
             Welcome To Our Website <span className="name">{user.name}</span>{" "}

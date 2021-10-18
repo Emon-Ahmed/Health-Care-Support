@@ -1,3 +1,8 @@
+.container{
+  margin: 0 auto;
+  /* width: 400px; */
+
+}
 .App {
   display: flex;
   justify-content: center;
@@ -18,7 +23,7 @@
   font-weight: bold;
   border: 2px solid #15BE63;
   color: #15BE63;
-  transition: 1s;
+  transition: 0.7s;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -31,7 +36,7 @@
   color: #15BE63;
   padding: 7px 5px;
   width: 227px;
-  transition: 1s;
+  transition: 0.7s;
   margin-top: 7px;
   font-weight: bold;
 }
