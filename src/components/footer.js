@@ -4,7 +4,9 @@ import "./components.css";
 export default function footer() {
   return (
     <div className="container">
+              <hr />
       <div className="footer-area">
+
         <div className="row">
           <div className="col-md-4">
             <img src="logo.png" alt="" />

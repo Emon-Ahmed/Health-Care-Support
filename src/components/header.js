@@ -33,11 +33,7 @@ export default function header() {
                   Services
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link nav-style" to="/appointment">
-                  Appointment
-                </Link>
-              </li>
+
               <li className="nav-item">
                 <Link className="nav-link nav-style" to="/about">
                   About
@@ -49,15 +45,19 @@ export default function header() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link nav-style" to="/appointment">
+                  Appointment
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link
                   className="nav-link nav-style nav-fancy nav-space"
-                  to="/profile"
-                >
+                  to="/profile">
                   Profile
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link nav-style nav-fancy" to="/register">
+                <Link className="nav-link nav-style nav-fancy" to="/signin">
                   Register
                 </Link>
               </li>
