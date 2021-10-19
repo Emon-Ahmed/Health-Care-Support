@@ -1,0 +1,55 @@
+.container {
+  margin: 0 auto;
+  /* width: 400px; */
+}
+.App {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  background-color: #15be63;
+  border: 2px solid #15be63;
+  color: white;
+  padding: 12px 24px;
+  display: block;
+  margin-top: 7px;
+  transition: 1s;
+  font-weight: bold;
+  width: 240px;
+}
+.btn:hover {
+  background-color: white;
+  font-weight: bold;
+  border: 2px solid #15be63;
+  color: #15be63;
+  transition: 0.7s;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.name {
+  color: #15be63;
+  text-decoration: underline;
+}
+.input-box {
+  border: 2px solid #15be63;
+  color: #15be63;
+  padding: 7px 5px;
+  width: 227px;
+  transition: 0.7s;
+  margin-top: 7px;
+  font-weight: bold;
+}
+.input-box:first-child {
+  margin-top: 24px;
+}
+.input-box:focus {
+  outline: none;
+}
+.login-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+}
+.btn-out {
+  margin: 28px;
+}

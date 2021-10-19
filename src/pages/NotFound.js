@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function about() {
+export default function NotFound() {
     return (
         <div>
-            Ami About
+            Ami Error
         </div>
     )
 }

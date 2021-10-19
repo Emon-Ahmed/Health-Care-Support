@@ -1,0 +1,46 @@
+/* Navbar Section Style  */
+.logo{
+    width: 75%;
+}
+.nav-style{
+    color: darkblue!important;
+    margin: 0 5px;
+    font-size: 1.1rem;
+}
+.nav-fancy{
+    background-color: white;
+    border: 2px solid #2BAAEC;
+    padding: 5px 30px!important;
+    border-radius: 20px;
+}
+.nav-fancy:hover{
+    background-color: #2BAAEC;
+    border: 2px solid white;
+    color: white!important;
+}
+.nav-space{
+    margin-left: 25px;
+}
+
+/* Banner Section Style  */
+.banner{
+    /* background-color: #25E6C8; */
+    padding: 45px 0;
+}
+.banner-img{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.banner-img img{
+    width: 40%;
+}
+
+
+
+/* Footer Section Style  */
+.footer{
+    background-color: cadetblue;
+    padding: 20px ;
+    color: white;
+}
