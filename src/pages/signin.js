@@ -2,6 +2,8 @@ import "./pages.css";
 import initAuth from "../firebase/firebase.init";
 import { useState } from "react";
 import {GoogleAuthProvider,signInWithPopup,getAuth,GithubAuthProvider,signOut,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,updateProfile } from "firebase/auth";
+import { Link } from "react-router-dom";
+
 
 initAuth();
 const githubProvider = new GithubAuthProvider();
@@ -110,6 +112,7 @@ function Signin() {
   return (
   <div className="container">
     <h1 style={{ textAlign:"center"}}>Account Registration</h1>
+    <p style={{ textAlign:"center"}}> Already You Have Account ? <Link to="/singin">Login </Link> </p>
     <div className="App">
       {!user.name ? (
         <div className="login-box">

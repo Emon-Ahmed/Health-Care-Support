@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="not-found">
         <img width="480px" src="404.svg" alt="404" />
         <br />
-        <Link to="/body">
+        <Link to="/home">
           <button className="btn nav-fancy">HOME PAGE</button>
         </Link>
       </div>

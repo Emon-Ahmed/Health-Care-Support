@@ -88,3 +88,19 @@ Not Found - 404 Page
 .btn-out {
   margin: 28px;
 }
+
+
+
+/* Profile  */
+.user-profile{
+  padding: 40px;
+  text-align: center;
+}
+.user-profile img{
+width: 25%;
+border-radius: 50%;
+}
+.user-profile h2{
+
+  margin: 20px 0;
+}
