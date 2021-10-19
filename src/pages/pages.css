@@ -41,14 +41,6 @@ About & Contact Page
   padding: 20px 0;
 }
 
-.input-from input, textarea{
-  border: none;
-  padding: 5px 20px;
-  margin: 0 20px;
-}
-.input-from input:focus,  textarea:focus{
-  outline: none!Important;
-}
 
 /*------------------
 Not Found - 404 Page
