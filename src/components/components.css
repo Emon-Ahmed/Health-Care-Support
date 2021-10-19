@@ -1,46 +1,104 @@
 /* Navbar Section Style  */
-.logo{
-    width: 75%;
+.logo {
+  width: 75%;
 }
-.nav-style{
-    color: darkblue!important;
-    margin: 0 5px;
-    font-size: 1.1rem;
+.nav-style {
+  color: darkblue !important;
+  margin: 0 5px;
+  font-size: 1.1rem;
 }
-.nav-fancy{
-    background-color: white;
-    border: 2px solid #2BAAEC;
-    padding: 5px 30px!important;
-    border-radius: 20px;
+.nav-fancy {
+  background-color: white;
+  border: 2px solid #2baaec;
+  padding: 5px 30px !important;
+  border-radius: 20px;
+  font-size: 1.1rem;
 }
-.nav-fancy:hover{
-    background-color: #2BAAEC;
-    border: 2px solid white;
-    color: white!important;
+.nav-fancy:hover {
+  background-color: #2baaec;
+  border: 2px solid white;
+  color: white !important;
 }
-.nav-space{
-    margin-left: 25px;
+.nav-space {
+  margin-left: 25px;
 }
 
 /* Banner Section Style  */
-.banner{
-    /* background-color: #25E6C8; */
-    padding: 45px 0;
+.banner {
+  padding: 45px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.banner-img{
-    display: flex;
-    justify-content: end;
-    align-items: center;
+.banner-info p {
+  color: gray;
 }
-.banner-img img{
-    width: 40%;
+.banner-info h1 {
+  font-size: 4rem;
+}
+
+.banner-img img {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+}
+
+/* AboutUs Section style  */
+
+.about-us {
+  background-color: white;
+  margin: auto;
+  padding: 45px;
+  margin-bottom: 100px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.about-us-info h1 {
+  font-size: 3rem;
+}
+
+.about-us-img img {
+  width: 80%;
+  display: block;
+  margin-right: auto;
+}
+
+.service-img{
+  width: 50%;
+}
+.btn-service{
+  border-bottom: 2px solid black;
+  border-radius: 0px;
+  padding-bottom: 0px;
 }
 
 
-
-/* Footer Section Style  */
+/* Testimonial Section style */
+.testimonial-box{
+  flex-wrap: nowrap;
+  margin-bottom: 100px;
+}
+.single-testimonial{
+  background-color: white;
+  margin: 24px;
+  padding: 24px;
+  
+}
+/* Newsletter Section Style  */
+.newsletter{
+  background-color: white;
+  padding: 90px;
+  margin-bottom: 100px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.newsletter-btn{
+  display: inline!important;
+}
+.footer p{
+  line-height: 8px;
+}
+.footer-area{
+  margin: 50px 0;
+}
 .footer{
-    background-color: cadetblue;
-    padding: 20px ;
-    color: white;
+ padding: 0 45px;
 }
