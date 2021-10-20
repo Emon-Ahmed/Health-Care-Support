@@ -4,31 +4,26 @@ import "./pages.css";
 export default function about() {
   return (
     <div className="container">
-      <div className="about-area">
+      <div className="about-area mb-5">
         <div className="about-text">
           <h1>About Us</h1>
           <p>
-            Education refers to the discipline that is concerned with methods of
-            teaching and learning in schools or school-like environments.
+          Healthcare Support Limited (HSL) is one of the best kinds of
+              company in the pharmaceutical industry in Bangladesh
           </p>
 
           <p>
-            Education is the process of facilitating learning, or the
-            acquisition of knowledge, skills, values, morals, beliefs, and
-            habits. Educational methods include teaching, training,
-            storytelling, discussion and directed research.We are the voice of
-            teachers and education workers around the world.Through our 386
-            member organisations, we represent more than 32.5 million teachers
+          The fundamental purpose of health care is to enhance quality of
+              life by enhancing health. Commercial businesses focus on creating
+              financial profit to support their valuation and remain viable.
           </p>
 
           <p>
-            Get a learning boost with thousands of worksheets, games, lesson
-            plans, and more from our library of printable and digital resources
-            for preschool
+          Health Care Support were all very friendly and helpful. I especially loved how Drs really took his time to explain my conditions with me as well as my treatment options. I had a great visit and the doctor's demeanor has really put me at ease so I highly recommend this clinic.
           </p>
         </div>
         <div className="about-img">
-          <img src="about.svg" alt="About"></img>
+          <img src="/about.svg" alt="About"></img>
         </div>
       </div>
     </div>

@@ -1,42 +1,42 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./components.css";
 
 export default function footer() {
   return (
     <div className="container">
-              <hr />
+             
       <div className="footer-area">
-
-        <div className="row">
+      <hr />
+        <div className="row main-footer">
           <div className="col-md-4">
-            <img src="logo.png" alt="" />
-            <p>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
+            <img src="/logo.png" alt="" />
+            {/* <p>Healthcare Support is one of the best in the Medical industry in Bangladesh</p> */}
+            
+            <p className="pt-4">  Copyright &copy; 2021 All Rights Reserved</p>
           </div>
           <div className="col-md-8">
             <div className="row">
               <div className="footer col-md-4">
-                <h5>Browse Service</h5>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
+                <h5>Menu</h5>
+                <Link to="/" className="footer-text">Home</Link>
+                <Link to="/services" className="footer-text">Services</Link>
+                <Link to="/about" className="footer-text">About</Link>
+                <Link to="/contact" className="footer-text">Contact</Link>
               </div>
               <div className="footer col-md-4">
-                <h5>Simple Nav</h5>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
+                <h5>Services</h5>
+                <Link to="/singleservice/1" className="footer-text">Cancer</Link>
+                <Link to="/singleservice/3" className="footer-text">Diagnostic</Link>
+                <Link to="/singleservice/4" className="footer-text">Dental</Link>
+                <Link to="/singleservice/5" className="footer-text">Eye Care</Link>
               </div>
               <div className="footer col-md-4">
-                <h5>Simple Nav</h5>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
-                <p>1st Service</p>
+                <h5>Social Links</h5>
+                <Link to="/contact" className="footer-text">Facebook</Link>
+                <Link to="/contact" className="footer-text">Instagram</Link>
+                <Link to="/contact" className="footer-text">Twitter</Link>
+                <Link to="/contact" className="footer-text">Linkdin</Link>
               </div>
             </div>
           </div>

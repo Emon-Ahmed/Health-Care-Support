@@ -5,9 +5,11 @@ import useAuth from "../hooks/useAuth";
 export default function PrivateRoute({ children, ...rest }) {
   const { user, loading } = useAuth();
   if (loading) {
-   return <div className="spinner-grow" role="status">
+   return <div className="container text-center my-4">
+     <div className="spinner-grow" role="status">
       <span className="visually-hidden">Loading...</span>
-    </div>;
+    </div>
+   </div>;
   }
 
   return (

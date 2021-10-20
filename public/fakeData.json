@@ -1,44 +1,38 @@
 [
   {
     "key": 1,
-    "name": "Bangla Master Class",
-    "description": "They resolve the truth or falsity of such.",
-    "price": 68,
-    "photo": "https://emonahmed.com/programming-hero/book-1.jpg"
+    "name": "Cancer",
+    "description": "Cancer is a group of diseases involving abnormal cell growth",
+    "photo": "https://emonahmed.com/programming-hero/cancer.png"
   },
   {
     "key": 2,
-    "name": "Math Project Course",
-    "description": "Mathematicians seek and use patterns to.",
-    "price": 44,
-    "photo": "https://emonahmed.com/programming-hero/book-2.jpg"
+    "name": "Surgery",
+    "description": "Surgery is a medical specialty that uses operative manual",
+    "photo": "https://emonahmed.com/programming-hero/surgery.png"
   },
   {
     "key": 3,
-    "name": "Social Science Project",
-    "description": " structure, space, and change. It has no. ",
-    "price": 52,
-    "photo": "https://emonahmed.com/programming-hero/book-3.jpg"
+    "name": "Diagnostic",
+    "description": "A Diagnostic  Test  is  a test used to identify a condition manual",
+    "photo": "https://emonahmed.com/programming-hero/diagnostic.png"
   },
   {
     "key": 4,
-    "name": "Greate English Master Class",
-    "description": "Mathematics includes the study of such.",
-    "price": 45,
-    "photo": "https://emonahmed.com/programming-hero/book-4.jpg"
+    "name": "Dental",
+    "description": "Dentistry, also known as dental medicine and oral medicine",
+    "photo": "https://emonahmed.com/programming-hero/dental.png"
   },
   {
     "key": 5,
-    "name": "Chemistry Master Course",
-    "description": "Science is a - (from Latin scientia)",
-    "price": 17,
-    "photo": "https://emonahmed.com/programming-hero/book-5.jpg"
+    "name": "Eye Care",
+    "description": "There are things you can do to help keep your eyes healthy",
+    "photo": "https://emonahmed.com/programming-hero/eye-care.png"
   },
   {
     "key": 6,
-    "name": "Physical Science Class",
-    "description": "An international nonprofit scientific.",
-    "price": 88,
-    "photo": "https://emonahmed.com/programming-hero/book-6.jpg"
+    "name": "Orthopadic",
+    "description": "Orthopaedic surgery or orthopaedics, is the branch of surgery",
+    "photo": "https://emonahmed.com/programming-hero/orthopadic.png"
   }
 ]

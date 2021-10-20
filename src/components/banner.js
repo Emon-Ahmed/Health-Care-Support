@@ -9,13 +9,13 @@ export default function banner() {
         <div className="banner row">
           <div className="banner-info col-md-6">
             <h1>Health Care Support</h1>
-            <p>Care Your Health & Lead A Happy Life With Your Family</p>
-            <Link to="/service" className="nav-fancy btn" href="">
+            <p>Care Your Health & Lead A Happy Life With Your Family.</p>
+            <Link to="/services" className="nav-fancy btn" href="">
               Browse Services
             </Link>
           </div>
           <div className="banner-img col-md-6">
-            <img src="banner.svg" alt="" />
+            <img src="/banner.svg" alt="" />
           </div>
         </div>
       </div>

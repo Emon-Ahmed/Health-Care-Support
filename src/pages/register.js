@@ -24,11 +24,12 @@ export default function Register() {
   return (
     <div>
       <div className="container">
-        <div className="contact-area">
+        <div className="contact-area mb-5">
           <div className="contact-text">
             <h1>Register</h1>
             <p>
-              Already You Have Account ? <Link to="/login">Login </Link>{" "}
+              Already You Have Account?<span> </span>
+              <Link to="/login">Login </Link>{" "}
             </p>
             <div className="contact-form">
               <div className="mb-3">
@@ -80,13 +81,11 @@ export default function Register() {
               <button onClick={emailRegister} className="btn nav-fancy">
                 Registration
               </button>
-              <button className="btn nav-fancy ms-2">
-                Registration With Google
-              </button>
+              <button className="btn nav-fancy ms-2">Google</button>
             </div>
           </div>
           <div className="contact-img">
-            <img src="banner.svg" alt="contact"></img>
+            <img src="/account.svg" alt="contact"></img>
           </div>
         </div>
       </div>
