@@ -6,11 +6,11 @@ export default function Login() {
   // JavaScript Object Destructuring
   const { signInGoogle, signInwithEmail, handleEmail, handlePassword, error } =
     useAuth();
-  
+
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/";
-  
+
   // For User should not be redirected to the login
   const googleLogin = () => {
     signInGoogle().then((result) => {
@@ -59,12 +59,14 @@ export default function Login() {
                 />
               </div>
               <p>{error}</p>
-              <button onClick={emailLogin} className="btn nav-fancy">
-                Login
-              </button>
-              <button onClick={googleLogin} className="btn nav-fancy ms-2">
-                Google
-              </button>
+              <div className="login-btn">
+                <button onClick={emailLogin} className="btn nav-fancy">
+                  Login
+                </button>
+                <button onClick={googleLogin} className="btn nav-fancy ms-2">
+                  Google
+                </button>
+              </div>
             </div>
           </div>
           <div className="contact-img">

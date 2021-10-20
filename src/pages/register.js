@@ -80,10 +80,14 @@ export default function Register() {
                   placeholder="Your Password"
                 />
               </div>
-              <button onClick={emailRegister} className="btn nav-fancy">
-                Registration
-              </button>
-              <button className="btn nav-fancy ms-2">Google</button>
+              <div className="login-btn">
+                <button onClick={emailRegister} className="btn nav-fancy">
+                  Registration
+                </button>
+                <button onClick={emailRegister} className="btn nav-fancy ms-2">
+                  Google
+                </button>
+              </div>
             </div>
           </div>
           <div className="contact-img">

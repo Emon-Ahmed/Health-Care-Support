@@ -83,6 +83,26 @@ Media Queries
 ---------------*/
 
 @media (max-width: 991.98px) { 
-  
+  .about-area, .contact-area {
+    Flex-direction: column;
+    align-items: center
+  }
+  .login-btn button{
+    display: block;
+    margin: 4px;
+  }
+  .about-img img, .contact-img img {
+    width: 100%;
+    padding: 0;
+  }
+  .testimonial-box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .service-list{
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
 
  }

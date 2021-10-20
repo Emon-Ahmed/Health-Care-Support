@@ -45,7 +45,7 @@ const useFirebase = () => {
       // Profile updated!
     });
   }
-
+  
   // For Creating Account With Email and Password
   const signUpWithEmail = () => {
     return createUserWithEmailAndPassword(auth, email, password)

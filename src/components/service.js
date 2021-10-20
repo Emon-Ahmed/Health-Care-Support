@@ -9,7 +9,7 @@ export default function service(props) {
   return (
     <div>
       <div className="service-box row">
-        <img className="service-img col-md-6" src={photo} />
+        <img className="service-img col-md-6" src={photo} alt="service" />
         <div className="service-box-info col-md-6">
           <h5 className="service-name">{name}</h5>
           <p>{description}</p>
