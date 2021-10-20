@@ -11,7 +11,6 @@ https://health-care-support.web.app/
 ## Table of Contents
 * [Project Info](#project-information)
 * [Features](#features)
-* [Technologies Used](#technologies-used)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 
@@ -24,15 +23,10 @@ https://health-care-support.web.app/
 List The Ready Features Here:
 - You Can Find Best Services Here
 - You Have To Login For Watching Our Services
-- You Can Login With Email & Password And Also Google.
+- You Can Login With Email & Password And Also Google
 - Also You Can Easily Navigate The Navbar
 - This Design is Followed By "Less is More"
 
-
-## Technologies Used
-- React (JavaScript library) - version 17.0.2
-- 
-- 
 
 
 ## Acknowledgements
