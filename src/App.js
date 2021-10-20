@@ -44,9 +44,9 @@ export default function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <Route exact path="/singleservice/:serviceID">
+            <PrivateRoute exact path="/singleservice/:serviceID">
               <Singleservice></Singleservice>
-            </Route>
+            </PrivateRoute>
             <Route exact path="/register">
               <Register></Register>
             </Route>

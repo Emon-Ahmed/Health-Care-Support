@@ -52,22 +52,23 @@ export default function Header() {
                 Appointment
               </Link>
             </li>
+            <li>
+              <Link
+                className="nav-link nav-style"
+                to="/profile">
+                  { user.displayName ? `${user.displayName}'s` : user.displayName } Profile
+              </Link>
+            </li>
           </ul>
           <div>
             {user.displayName ? (
               <ul className="navbar-nav">
                 <li>
                   <Link
-                    className="nav-link nav-style nav-fancy nav-space"
-                    to="/profile">
-                    {user.displayName}'s Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     onClick={logOut}
                     className="nav-link nav-style nav-fancy nav-space"
-                    to="/login">
+                    to="/login"
+                  >
                     Logout
                   </Link>
                 </li>

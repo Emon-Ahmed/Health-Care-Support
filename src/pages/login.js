@@ -3,16 +3,17 @@ import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 export default function Login() {
-  const { signInGoogle } = useAuth();
+  const { signInGoogle, signInwithEmail, handleEmail, handlePassword, error } =
+    useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/";
-
   const googleLogin = () => {
     signInGoogle().then((result) => {
       history.push(redirect_uri);
     });
   };
+
   return (
     <div>
       <div className="container">
@@ -32,6 +33,7 @@ export default function Login() {
                   Email address
                 </label>
                 <input
+                  onBlur={handleEmail}
                   type="email"
                   className="form-control"
                   id="exampleFormControlInput1"
@@ -46,13 +48,17 @@ export default function Login() {
                   Your Password
                 </label>
                 <input
+                  onBlur={handlePassword}
                   type="password"
                   className="form-control"
                   id="exampleFormControlInput1"
                   placeholder="Your Problem"
                 />
               </div>
-              <button className="btn nav-fancy">Login</button>
+              <p>{error}</p>
+              <button onClick={signInwithEmail} className="btn nav-fancy">
+                Login
+              </button>
               <button onClick={googleLogin} className="btn nav-fancy ms-2">
                 Login With Google
               </button>

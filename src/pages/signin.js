@@ -12,9 +12,12 @@ const auth = getAuth();
 
 function Signin() {
   const [user, setUser] = useState({});
+
+  const [error, setError] = useState("");
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [name, setName] = useState("");
 
   const handleEmail = (e) => {
@@ -54,10 +57,6 @@ function Signin() {
   };
 
   const signUpWithEmail = () => {
-    if( password.length < 6  ){
-      setError( "Password Should Be 6 Char, OK" );
-      return;
-    }
     createUserWithEmailAndPassword(auth, email, password)
     .then((result) => {
       const user = result.user;
