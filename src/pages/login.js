@@ -3,11 +3,15 @@ import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 export default function Login() {
+  // JavaScript Object Destructuring
   const { signInGoogle, signInwithEmail, handleEmail, handlePassword, error } =
     useAuth();
+  
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/";
+  
+  // For User should not be redirected to the login
   const googleLogin = () => {
     signInGoogle().then((result) => {
       history.push(redirect_uri);

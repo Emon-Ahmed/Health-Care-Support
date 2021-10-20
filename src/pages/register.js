@@ -1,19 +1,21 @@
 import React from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
-import useFirebase from "../hooks/useFirebase";
+import useAuth from "../hooks/useAuth";
 
 export default function Register() {
+  // JavaScript Object Destructuring
   const {
     signUpWithEmail,
     signInwithEmail,
     handleEmail,
     handlePassword,
     handleName,
-  } = useFirebase();
+  } = useAuth();
 
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/";
+  // For User should not be redirected to the login
   const emailRegister = () => {
     signUpWithEmail().then((result) => {
       history.push(redirect_uri);

@@ -1,11 +1,27 @@
-
+/*---------------------
+Home Page Service List
+-----------------------*/
 .service-list{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
-
-
+.service {
+  margin-bottom: 120px;
+}
+.service-img {
+  width: 50%;
+}
+.btn-service {
+  border-bottom: 2px solid black;
+  border-radius: 0px;
+  padding-bottom: 0px;
+}
+.service-title {
+  border-bottom: 3px solid #2baaec;
+  display: inline-block;
+  margin-bottom: 40px;
+}
 
 /*-------------------
 About & Contact Page
@@ -36,7 +52,6 @@ About & Contact Page
   padding: 20px 0;
 }
 
-
 /*------------------
 Not Found - 404 Page
 --------------------*/
@@ -48,44 +63,9 @@ Not Found - 404 Page
   padding: 100px 0;
 }
 
-
-.container {
-  margin: 0 auto;
-}
-.App {
-  display: flex;
-  justify-content: center;
-}
-.name {
-  color: #15be63;
-  text-decoration: underline;
-}
-.input-box {
-  border: 2px solid #15be63;
-  color: #15be63;
-  padding: 7px 5px;
-  width: 227px;
-  transition: 0.7s;
-  margin-top: 7px;
-  font-weight: bold;
-}
-.input-box:first-child {
-  margin-top: 24px;
-}
-.input-box:focus {
-  outline: none;
-}
-.login-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
-}
-.btn-out {
-  margin: 28px;
-}
-
-
-/* Profile  */
+/*---------------------
+User Profile Page Style
+-----------------------*/
 .user-profile{
   padding: 40px;
   text-align: center;
@@ -95,6 +75,16 @@ width: 25%;
 border-radius: 50%;
 }
 .user-profile h2{
-
   margin: 20px 0;
 }
+
+/*-------------
+Media Queries 
+---------------*/
+
+@media (max-width: 991.98px) { 
+  body{
+    background-color: red;
+  }
+
+ }

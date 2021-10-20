@@ -4,6 +4,7 @@ import Service from "../components/service";
 import { useEffect, useState } from "react";
 
 export default function Services() {
+  //For Dynamic Data Shows From Local JSON Files
   const [service, setService] = useState([]);
   useEffect(() => {
     fetch("fakeData.json")

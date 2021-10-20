@@ -7,7 +7,7 @@ export default function appointment() {
         <div className="contact-text">
           <h1>Appointment</h1>
           <div className="contact-form">
-          <div className="mb-3">
+            <div className="mb-3">
               <label htmlFor="name" className="form-label">
                 Your Name
               </label>

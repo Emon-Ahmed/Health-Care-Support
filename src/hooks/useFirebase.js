@@ -13,10 +13,12 @@ import {
 } from "firebase/auth";
 
 initAuth();
+
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 
 const useFirebase = () => {
+  // Hooks
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -24,6 +26,7 @@ const useFirebase = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Handling Email, Password, Name
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -34,6 +37,7 @@ const useFirebase = () => {
     setName(e.target.value);
   };
 
+  // Calling Name Function For Register
   function updateName() {
     updateProfile(auth.currentUser, {
       displayName: name,
@@ -42,6 +46,7 @@ const useFirebase = () => {
     });
   }
 
+  // For Creating Account With Email and Password
   const signUpWithEmail = () => {
     return createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
@@ -54,6 +59,7 @@ const useFirebase = () => {
       });
   };
 
+  // For Login Account With Email and Password
   const signInwithEmail = () => {
     return signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
@@ -65,12 +71,13 @@ const useFirebase = () => {
       });
   };
 
+  // For Creating Account With Google
   const signInGoogle = () => {
     return signInWithPopup(auth, googleProvider).finally(() => {
       setLoading(false);
     });
   };
-
+  // Using Hooks For Not Logout
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -81,13 +88,15 @@ const useFirebase = () => {
       setLoading(false);
     });
   }, []);
+  // User Logout Function Call
   const logOut = () => {
     setLoading(true);
     signOut(auth)
       .then(() => setUser({}))
       .finally(() => setLoading(false));
   };
-
+  
+  // User Logout Function Call
   const resetPassword = () => {
     sendPasswordResetEmail(auth, user.email)
       .then(() => {
@@ -113,7 +122,7 @@ const useFirebase = () => {
     setError,
     handleEmail,
     handlePassword,
-    handleName
+    handleName,
   };
 };
 export default useFirebase;

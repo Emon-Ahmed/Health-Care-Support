@@ -7,9 +7,11 @@ import Testimonial from "../components/testimonial";
 import Newsletter from "../components/newsletter";
 
 export default function Home() {
+
+  //For Dynamic Data Shows From Local JSON File
   const [service, setService] = useState([]);
   useEffect(() => {
-    fetch('/fakeData.json')
+    fetch("/fakeData.json")
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

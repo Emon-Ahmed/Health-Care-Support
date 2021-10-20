@@ -7,10 +7,15 @@ export default function newsletter() {
     <div>
       <div className="container">
         <div className="newsletter row">
-          <div className="newsletter-info col-md-9"> 
+          <div className="newsletter-info col-md-9">
             <h3>Don't Feel Better, Need An Doctor ??? </h3>
           </div>
-          <Link to="/register" className="newsletter-btn btn nav-fancy col-md-3">Register Now</Link>
+          <Link
+            to="/register"
+            className="newsletter-btn btn nav-fancy col-md-3"
+          >
+            Register Now
+          </Link>
         </div>
       </div>
     </div>

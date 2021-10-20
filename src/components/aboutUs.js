@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./components.css";
 
 export default function aboutUs() {
+  // This is Extra Section ONE For Bonus
   return (
     <div>
       <div className="container">

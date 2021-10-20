@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-
 import "./components.css";
 
 export default function Header() {
+  // Using Hooks
   const { user, logOut } = useAuth();
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
@@ -53,10 +52,9 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                className="nav-link nav-style"
-                to="/profile">
-                  { user.displayName ? `${user.displayName}'s` : user.displayName } Profile
+              <Link className="nav-link nav-style" to="/profile">
+                {user.displayName ? `${user.displayName}'s` : user.displayName}{" "}
+                Profile
               </Link>
             </li>
           </ul>
