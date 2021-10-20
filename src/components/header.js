@@ -25,7 +25,7 @@ export default function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <div className="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link nav-style" aria-current="page" to="/">
                 Home
@@ -52,28 +52,41 @@ export default function Header() {
                 Appointment
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link nav-style" to="/profile">
-                {user.displayName} Profile
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="nav-link nav-style nav-fancy nav-space"
-                to="/login"
-              >
-                Login
-              </Link>
-            </li>
-            
-          </div>
+          </ul>
           <div>
-            { user.displayName && <button onClick={logOut} className="nav-item nav-fancy">
-              Logout
-            </button> }
+            {user.displayName ? (
+              <ul className="navbar-nav">
+                <li>
+                  <Link
+                    className="nav-link nav-style nav-fancy nav-space"
+                    to="/profile">
+                    {user.displayName}'s Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    onClick={logOut}
+                    className="nav-link nav-style nav-fancy nav-space"
+                    to="/login">
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <ul className="navbar-nav">
+                <li>
+                  <Link
+                    className="nav-link nav-style nav-fancy nav-space"
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       </div>
     </nav>
-  )
+  );
 }

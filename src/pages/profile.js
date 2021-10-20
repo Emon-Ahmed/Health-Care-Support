@@ -9,8 +9,8 @@ export default function Profile() {
             <div className="user-profile">
                 <img src={user.photoURL} alt="" />
                 <h2>{user.displayName}</h2> 
+                <p>{user.email}</p> 
             </div>
-            
         </div>
     )
 }

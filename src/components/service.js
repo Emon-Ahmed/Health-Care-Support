@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./components.css";
 
 export default function service(props) {
-  const { name, photo, description } = props.service;
+  const {key, name, photo, description } = props.service;
   return (
     <div>
       <div className="service-box row">
@@ -10,7 +11,7 @@ export default function service(props) {
         <div className="service-box-info col-md-6">
           <h5 className="service-name">{name}</h5>
           <p>{description}</p>
-          <button className="btn btn-service">Take Service</button>
+          <Link to={`/singleservice/${key}`} className="btn btn-service">Take Service</Link>
         </div>
       </div>
     </div>

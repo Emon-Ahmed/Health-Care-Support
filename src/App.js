@@ -14,6 +14,7 @@ import Login from "./pages/login";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Profile from "./pages/profile";
+import Singleservice from "./components/Singleservice"
 
 export default function App() {
   return (
@@ -42,6 +43,9 @@ export default function App() {
             </Route>
             <Route exact path="/login">
               <Login></Login>
+            </Route>
+            <Route exact path="/singleservice/:serviceID">
+              <Singleservice></Singleservice>
             </Route>
             <Route exact path="/register">
               <Register></Register>
