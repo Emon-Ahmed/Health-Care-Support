@@ -13,6 +13,13 @@ export default function Login() {
       history.push(redirect_uri);
     });
   };
+  const emailLogin = () => {
+    signInwithEmail().then((result) => {
+      history.push(redirect_uri);
+    });
+  };
+  
+
 
   return (
     <div>
@@ -56,7 +63,7 @@ export default function Login() {
                 />
               </div>
               <p>{error}</p>
-              <button onClick={signInwithEmail} className="btn nav-fancy">
+              <button onClick={emailLogin} className="btn nav-fancy">
                 Login
               </button>
               <button onClick={googleLogin} className="btn nav-fancy ms-2">

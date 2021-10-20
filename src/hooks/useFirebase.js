@@ -58,7 +58,7 @@ const useFirebase = () => {
 
 
   const signInwithEmail = () =>{
-    signInWithEmailAndPassword(auth, email, password)
+    return signInWithEmailAndPassword(auth, email, password)
     .then((result) => {
       const user = result.user;
       setError('');
@@ -72,6 +72,8 @@ const useFirebase = () => {
     return signInWithPopup(auth, googleProvider)
     .finally(() => { setLoading(false) });;
   };
+
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -87,10 +89,12 @@ const useFirebase = () => {
     signOut(auth).then(() => setUser({}))
     .finally(() => setLoading(false))
   };
+
   const resetPassword = () => {
-    sendPasswordResetEmail(auth, email)
+    sendPasswordResetEmail(auth, user.email)
     .then(() => {
-      // Password reset email sent!
+      console.log('DONE');
+      console.log(user.email);
     })
     .catch((error) => {
     setError(error.message);
