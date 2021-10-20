@@ -9,7 +9,7 @@ import Newsletter from "../components/newsletter";
 export default function Home() {
   const [service, setService] = useState([]);
   useEffect(() => {
-    fetch("fakeData.json")
+    fetch('/fakeData.json')
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

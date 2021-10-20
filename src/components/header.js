@@ -11,7 +11,7 @@ export default function Header() {
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          <img className="logo" src="logo.png" alt="" />
+          <img className="logo" src="/logo.png" alt="LOGO" />
         </Link>
         <button
           className="navbar-toggler"
