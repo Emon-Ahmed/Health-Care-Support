@@ -1,19 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useFirebase from "../hooks/useFirebase";
 
 export default function Register() {
-  const { signUpWithEmail, handleEmail, handlePassword, handleName } = useFirebase();
+  const {
+    signUpWithEmail,
+    signInwithEmail,
+    handleEmail,
+    handlePassword,
+    handleName,
+  } = useFirebase();
 
-  // const handleEmail = (e) => {
-  //   setEmail(e.target.value);
-  // };
-  // const handlePassword = (e) => {
-  //   setPassword(e.target.value);
-  // };
-  // const handleName = (e) => {
-  //   setName(e.target.value);
-  // };
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_uri = location.state?.from || "/";
+  const emailRegister = () => {
+    signUpWithEmail().then((result) => {
+      history.push(redirect_uri);
+    });
+    signInwithEmail();
+  };
 
   return (
     <div>
@@ -22,7 +28,6 @@ export default function Register() {
           <div className="contact-text">
             <h1>Register</h1>
             <p>
-              {" "}
               Already You Have Account ? <Link to="/login">Login </Link>{" "}
             </p>
             <div className="contact-form">
@@ -72,7 +77,7 @@ export default function Register() {
                   placeholder="Your Password"
                 />
               </div>
-              <button onClick={signUpWithEmail} className="btn nav-fancy">
+              <button onClick={emailRegister} className="btn nav-fancy">
                 Registration
               </button>
               <button className="btn nav-fancy ms-2">

@@ -13,7 +13,6 @@ import {
 } from "firebase/auth";
 
 initAuth();
-
 const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 
@@ -24,7 +23,7 @@ const useFirebase = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -35,72 +34,69 @@ const useFirebase = () => {
     setName(e.target.value);
   };
 
-
   function updateName() {
     updateProfile(auth.currentUser, {
-      displayName: name
+      displayName: name,
     }).then(() => {
       // Profile updated!
     });
   }
 
   const signUpWithEmail = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((result) => {
-      const user = result.user;
-      setError('');
-      updateName();
-    })
-    .catch(error =>{
-      setError( error.message )
-    });
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        const user = result.user;
+        updateName();
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
-
-  const signInwithEmail = () =>{
+  const signInwithEmail = () => {
     return signInWithEmailAndPassword(auth, email, password)
-    .then((result) => {
-      const user = result.user;
-      setError('');
-    })
-    .catch(error =>{
-      setError( error.message )
-    });
+      .then((result) => {
+        const user = result.user;
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   const signInGoogle = () => {
-    return signInWithPopup(auth, googleProvider)
-    .finally(() => { setLoading(false) });;
+    return signInWithPopup(auth, googleProvider).finally(() => {
+      setLoading(false);
+    });
   };
-
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-      }else {
+      } else {
         setUser({});
-    }
-    setLoading(false);
+      }
+      setLoading(false);
     });
   }, []);
   const logOut = () => {
     setLoading(true);
-    signOut(auth).then(() => setUser({}))
-    .finally(() => setLoading(false))
+    signOut(auth)
+      .then(() => setUser({}))
+      .finally(() => setLoading(false));
   };
 
   const resetPassword = () => {
     sendPasswordResetEmail(auth, user.email)
-    .then(() => {
-      console.log('DONE');
-      console.log(user.email);
-    })
-    .catch((error) => {
-    setError(error.message);
-    });
+      .then(() => {
+        // Email Sent!
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
-
 
   return {
     user,
@@ -117,8 +113,7 @@ const useFirebase = () => {
     setError,
     handleEmail,
     handlePassword,
-    handleName,
-    error
+    handleName
   };
 };
 export default useFirebase;
